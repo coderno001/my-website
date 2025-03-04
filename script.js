@@ -139,38 +139,26 @@ function closeManifesto() {
 /*voting*/
 document.addEventListener("DOMContentLoaded", function () {
     const voteBtn = document.getElementById("vote-btn");
-    const popup = document.getElementById("voting-popup");
-    const closeBtn = document.querySelector(".close");
-    const timerDisplay = document.getElementById("timer");
+    const popup = document.getElementById("vote-popup");
+    const closeBtn = document.querySelector(".close-btn");
 
-    // Function to calculate and display the countdown
-    function updateCountdown() {
-        const electionDate = new Date("March 19, 2025 08:00:00").getTime();
-        const now = new Date().getTime();
-        const timeLeft = electionDate - now;
-
-        if (timeLeft > 0) {
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-            timerDisplay.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-        } else {
-            timerDisplay.innerHTML = "Voting is now open! 🗳";
-        }
-    }
-
-    // Show popup on click
+    // Show popup when vote button is clicked
     voteBtn.addEventListener("click", function (event) {
-        event.preventDefault();
-        popup.style.display = "block";
-        updateCountdown(); // Start the countdown
-        setInterval(updateCountdown, 1000); // Update every second
+        event.preventDefault(); // Prevents any unwanted navigation
+        popup.style.display = "block"; // Show popup
     });
 
-    // Close popup
+    // Close popup when the '×' button is clicked
     closeBtn.addEventListener("click", function () {
         popup.style.display = "none";
     });
+
+    // Close popup when clicking outside the popup
+    window.addEventListener("click", function (event) {
+        if (event.target === popup) {
+            popup.style.display = "none";
+        }
+    });
 });
+
 
