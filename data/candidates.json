@@ -1,0 +1,13 @@
+[
+    {
+        "name": "John Doe",
+        "manifesto": "Bringing transparency and better student representation.",
+        "image": "assets/images/john_doe.jpg"
+    },
+    {
+        "name": "Jane Smith",
+        "manifesto": "Empowering students through better policies.",
+        "image": "assets/images/jane_smith.jpg"
+    }
+]
+

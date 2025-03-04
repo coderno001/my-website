@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JKUSA 2025 Student Elections</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<!-- Floating Advertisement Video -->
+<div id="floating-video">
+    <button id="close-video">❌</button>
+    <video width="300" controls autoplay muted>
+        <source src="./assets/videos/advert2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<form id="loginForm">
+    <input type="text" id="studentID" placeholder="Enter Student ID" required>
+    <input type="password" id="password" placeholder="Enter Password" required>
+    <button type="submit">Login</button>
+</form>
+
+
+
+<body>
+    
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="https://www.jkuat.ac.ke/" title="Jomo Kenyatta University of Agriculture and Technology" class="logo" role="link">
+            <img src="https://www.jkuat.ac.ke/wp-content/uploads/2025/02/jkuatlogo1.png" alt="Jomo Kenyatta University of Agriculture and Technology">
+        </a>
+        <ul>
+            <li><a href="#home">🏠 Home</a></li>
+            <li><a href="#candidates">👤 Candidates</a></li>
+            <li><a href="#posters">🖼 Campaign Poster</a></li>
+            <li><a href="#" id="vote-btn">🗳 Voting</a></li> <!-- Voting Button -->
+            <li><a href="#contact">📩 Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="hero">
+            <h1>Welcome to the 2025 JKUSA Elections</h1>
+            <p>Your vote, your future! Explore candidate manifestos and campaign materials.</p>
+            <a href="#candidates" class="btn">Meet the Candidates</a>
+        </div>
+    </section>
+    
+      
+
+    <section id="hero">
+        <div class="hero-content">
+            <h2>Your Vote, Your Voice!</h2>
+            <p>Be part of the 2025 JKUSA Elections. Explore candidates, view their manifestos, and make an informed decision.</p>
+            
+        </div>
+    </section>
+   <!-- Posters Section -->
+<section id="posters">
+    <h2>Campaign Posters</h2>
+    <img src="./assets/images/jkusa-poster.jpg" alt="JKUSA Elections Poster">
+    <p>Download campaign posters and support your candidate!</p>
+    
+    <!-- Download Button -->
+    <a href="./assets/images/jkusa-poster.jpg" download="JKUSA_Elections_Poster.jpg" class="download-btn">
+        📥 Download Poster
+    </a>
+</section>
+
+    <!-- Countdown Section -->
+    <section id="countdown">
+        <h2>Election Countdown</h2>
+        <p id="timer">Loading...</p>
+    </section>
+        <!-- voting Section -->
+
+    <div id="voting-popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>🗳 Voting process starts in:</h2>
+            <p id="timer">Loading...</p>
+        </div>
+    </div>
+    
+    <!-- Candidates Section -->
+    <section id="candidates">
+        <h2>Meet the Candidates</h2>
+    
+        <div class="candidate">
+            <img src="./assets/images/candidate1-poster.jpg" alt="Candidate 1">
+            <h3>Anyango Faith</h3>
+            <button class="view-more-btn" onclick="openManifesto('manifesto1')">View More</button>
+        </div>
+    
+        <div class="candidate">
+            <img src="./assets/images/candidate2-poster.jpg" alt="Candidate 2">
+            <h3>Lucy Kibe</h3>
+            <button class="view-more-btn" onclick="openManifesto('manifesto2')">View More</button>
+        </div>
+    
+        <div class="candidate">
+            <img src="./assets/images/candidate4-poster.jpg" alt="Candidate 3">
+            <h3>Paul Mwangangi</h3>
+            <button class="view-more-btn" onclick="openManifesto('manifesto3')">View More</button>
+        </div>
+    </section>
+<!-- Manifesto Modal -->
+<div id="manifestoModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeManifesto()">&times;</span>
+        <h2 id="candidate-name"></h2>
+        <p id="candidate-manifesto"></p>
+    </div>
+</div>
+    
+    
+    
+
+
+
+<section id="campaign-videos">
+    <h2>Candidate Campaign Video</h2>
+    <p>Watch the campaign promises and understand the vision for JKUSA 2025 elections.</p>
+
+    <!-- Embedded YouTube Video -->
+    <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/muqEGmMwvNE" 
+            title="JKUSA Campaign Video" frameborder="0" 
+            allowfullscreen>
+    </iframe>
+</section>
+<h3>Jump to Specific Promises</h3>
+<ul>
+    <li><a href="https://www.youtube.com/watch?v=muqEGmMwvNE&t=15s" target="_blank">Better Campus WiFi</a></li>
+    <li><a href="https://www.youtube.com/watch?v=muqEGmMwvNE&t=30s" target="_blank">Hostel Renovations</a></li>
+    <li><a href="https://www.youtube.com/watch?v=muqEGmMwvNE&t=50s" target="_blank">Affordable Meals</a></li>
+</ul>
+<h3>Campaign Video Transcript</h3>
+<p><strong>Introduction (00:00):</strong> "Hello students! I'm committed to making our campus better..."</p>
+<p><strong>Better Campus WiFi (00:15):</strong> "I will ensure faster and more reliable WiFi for students..."</p>
+<p><strong>Hostel Renovations (00:30):</strong> "Hostel conditions need improvement, and I will make it happen..."</p>
+<p><strong>Affordable Meals (00:50):</strong> "Students deserve quality and affordable meals at the cafeteria..."</p>
+
+
+
+<!-- Banner Section -->
+<section id="banner">
+    <h2>Support Your Candidate</h2>
+    <video autoplay loop muted playsinline width="80%">
+        <source src="./assets/banners/banner2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</section>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: <a href="mailto:jkusaelections@gmail.com">jkusaelections@gmail.com</a></p>
+        <p>Phone: +254 700 123456</p>
+    </section>
+    <!-- Pop-up Ad -->
+<div id="popup-ad">
+    <img src="./assets/images/advert2.jpg" alt="Special Offer">
+    <button onclick="closePopup()">Close</button>
+</div>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 JKUSA Elections. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
